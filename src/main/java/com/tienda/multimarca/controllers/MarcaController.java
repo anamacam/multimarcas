@@ -1,28 +1,28 @@
 package com.tienda.multimarca.controllers;
 
 import com.tienda.multimarca.dto.MarcaDTO;
+import com.tienda.multimarca.services.IFMarcaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/service")
 public class MarcaController {
 
-    //@ResponseStatus
+    @Autowired
+    IFMarcaService service;
 
+    //@ResponseStatus
     @GetMapping("/getMarcas")
     @ResponseStatus(HttpStatus.OK)
-    public List<MarcaDTO> getMarcas(@RequestHeader("Autenticador") String token) {
+    public List<MarcaDTO> getMarcas(@RequestHeader("Autenticador")String token) {
         System.out.println(("Token enviado:" + token));
-        List<MarcaDTO> listaMarcas = new ArrayList<>();
-        listaMarcas.add(new MarcaDTO(1L, "Lenovo"));
-        listaMarcas.add(new MarcaDTO(2L, "HP"));
-
-        return listaMarcas;
+        return service.getMarcas(token);
 
     }
 
