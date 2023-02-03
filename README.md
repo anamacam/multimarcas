@@ -1,6 +1,6 @@
 # multimarcas
-## Aplicando los verbos principales de HTTP
-### Códigos de estado de respuesta HTTP: 
+
+## Códigos de estado de respuesta HTTP: 
 
 Los códigos HTTP son la respuesta del servidor a la solicitud del cliente. Funciona como intérprete, permitiendo mejorar la cumunicacion entre el cliente y el servidor indiando si la respuesta ha sido satisfactoria o si a presentado algun error.
 A continuación encontramos agunos códigos de estado utilizando la etiqueta @ResponseStatus:
