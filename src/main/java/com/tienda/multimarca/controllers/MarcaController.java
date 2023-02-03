@@ -1,6 +1,7 @@
 package com.tienda.multimarca.controllers;
 
 import com.tienda.multimarca.dto.MarcaDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 public class MarcaController {
 
     @GetMapping("/getMarcas")
+    @ResponseStatus(HttpStatus.OK)
     public List<MarcaDTO>getMarcas(@RequestHeader ("Autenticador" ) String token){
         System.out.println(("Token enviado:"+ token));
         List<MarcaDTO> listaMarcas = new ArrayList<>();
@@ -23,6 +25,7 @@ public class MarcaController {
 
     //POST --> Insertar
     @PostMapping("/saveMarca")
+    @ResponseStatus(HttpStatus.CREATED)
     public MarcaDTO save(@RequestBody MarcaDTO request){
 
         MarcaDTO response = request;
