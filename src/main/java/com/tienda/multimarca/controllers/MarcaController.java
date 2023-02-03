@@ -11,7 +11,8 @@ import java.util.List;
 public class MarcaController {
 
     @GetMapping("/getMarcas")
-    public List<MarcaDTO>getMarcas(){
+    public List<MarcaDTO>getMarcas(@RequestHeader ("Autenticador" ) String token){
+        System.out.println(("Token enviado:"+ token));
         List<MarcaDTO> listaMarcas = new ArrayList<>();
         listaMarcas.add(new MarcaDTO(1L,"Lenovo"));
         listaMarcas.add(new MarcaDTO(2L,"HP"));
