@@ -1,6 +1,5 @@
 package com.tienda.multimarca.controllers;
 
-import com.tienda.multimarca.dto.MarcaDTO;
 import com.tienda.multimarca.services.IFMarcaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +13,7 @@ import java.util.List;
 @RequestMapping("/service")
 public class MarcaController {
 
+
     @Autowired
     IFMarcaService service;
 
@@ -21,19 +21,23 @@ public class MarcaController {
     @GetMapping("/getMarcas")
     @ResponseStatus(HttpStatus.OK)
     public List<MarcaDTO> getMarcas(@RequestHeader("Autenticador")String token) {
-        System.out.println(("Token enviado:" + token));
         return service.getMarcas(token);
 
     }
+
+    @GetMapping("/getMarcasxId/{idMarca}")
+    @ResponseStatus(HttpStatus.OK)
+    public MarcaDTO getMarcasxId(@PathVariable Long idMarca) {
+        return service.getMarcasxId(dMarca);
+    }
+
+
 
     //POST --> Insertar
     @PostMapping("/saveMarca")
     @ResponseStatus(HttpStatus.CREATED)
     public MarcaDTO save(@RequestBody MarcaDTO request) {
-
-        MarcaDTO response = request;
-        response.setIdMarca(1l);
-        return response;
+        return service.saveMarca(request);
 
     }
 
@@ -41,9 +45,9 @@ public class MarcaController {
 
     //PUT --> Actualizar
     @PutMapping("/updateMarca")
-    public ResponseEntity<MarcaDTO> update(@RequestBody MarcaDTO request) {
-        MarcaDTO response = request;
-        return new ResponseEntity<>(response, HttpStatus.OK);
+    @ResponseStatus(HttpStatus.OK)
+    public MarcaDTO update(@RequestBody MarcaDTO request) {
+        return service.udateMarca(request);
     }
 
     // DELETE --> Eliminar

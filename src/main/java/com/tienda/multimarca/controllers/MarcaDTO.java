@@ -1,4 +1,4 @@
-package com.tienda.multimarca.dto;
+package com.tienda.multimarca.controllers;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
