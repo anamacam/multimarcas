@@ -16,8 +16,8 @@ Indica que la petición se ha complatado con éxito y el recurso se ha obtenido 
 códigos de error de cliente. Indica que el recurso no esta disponible. Aquí hemos utilizado un ResponseEntity para agregar un mensaje al código de estado.
 
 
-<img width="438" alt="Captura de pantalla 2023-02-03 130638" src="https://user-images.githubusercontent.com/88153157/216686922-e1573799-d628-42fa-a985-bb0f57a69526.png">
+<img width="439" alt="Captura de pantalla 2023-02-03 130638" src="https://user-images.githubusercontent.com/88153157/216686922-e1573799-d628-42fa-a985-bb0f57a69526.png">
 
 - 404: Not found. Un error muy común. No se reconoce la URL; la fuente no existe.
 
-<img width="639" alt="Captura de pantalla 2023-02-03 130212" src="https://user-images.githubusercontent.com/88153157/216687584-dc7d18c3-4fec-4ecf-b4ef-b785f6368465.png">
+<img width="439" alt="Captura de pantalla 2023-02-03 130212" src="https://user-images.githubusercontent.com/88153157/216687584-dc7d18c3-4fec-4ecf-b4ef-b785f6368465.png">
